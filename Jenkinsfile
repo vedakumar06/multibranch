@@ -1,20 +1,21 @@
-pipeline{
+pipeline {
   agent any
-  stages{
-    stage('first stage'){
-      steps{
-        echo 'first stage'
-      }
+  stages {
+    stage('Build') { 
+      steps { 
+        echo 'Building..' 
+      } 
+    } 
+    stage('Test') {
+      steps {
+        echo 'Testing..'
+      } 
     }
-    stage('second stage'){
-      steps{
-        echo 'second stage'
-      }
-    }
-    stage('third stage'){
-      steps{
-        echo 'third stage'
+    stage('Deploy') {
+      steps {
+        echo 'Deploying....' 
       }
     }
   }
 }
+// Script // node { stage('Build') { echo 'Building....' } stage('Test') { echo 'Building....' } stage('Deploy') { echo 'Deploying....' } }
